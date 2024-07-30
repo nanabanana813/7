@@ -1,5 +1,5 @@
 {
-  "name": "obbs_front devcontainer",
+  "name": "chico-site devcontainer",
   "dockerComposeFile": ["../docker-compose.yml", "docker-compose.yml"],
   "service": "node",
   "workspaceFolder": "/workspace",
@@ -30,14 +30,9 @@
         "MS-CEINTL.vscode-language-pack-ja",
         "oderwat.indent-rainbow",
         "PKief.material-icon-theme",
-        "ZixuanChen.vitest-explorer",
-        "GitHub.copilot"
+        "ZixuanChen.vitest-explorer"
       ]
     }
-  },
-  "features": {
-    "docker-in-docker": "latest",
-    "aws-cli": "latest"
   },
   "postStartCommand": "yarn install && yarn dev"
 }
