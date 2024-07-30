@@ -1,0 +1,17 @@
+version: '3'
+services:
+  node:
+    container_name: chico
+    build:
+      context: .
+      target: build-stage
+      dockerfile: ./Dockerfile
+    environment:
+      - TZ='Asia/Tokyo'
+    volumes:
+      - .:/workspace:cached
+      - /workspace/node_modules
+      - /workspace/.output
+    ports:
+      - 3000:3000
+    command: "bash -c 'rm -rf /tmp/* && yarn install && yarn dev'"

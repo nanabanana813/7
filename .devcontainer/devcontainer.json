@@ -1,0 +1,44 @@
+{
+    "name": "obbs_front devcontainer",
+    "dockerComposeFile": ["../docker-compose.yml", "docker-compose.yml"],
+    "service": "node",
+    "workspaceFolder": "/workspace",
+    "customizations": {
+      "vscode": {
+        "settings": {
+          /* Linter and Formatter */
+          // linter
+          "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": true, // eslint
+            "source.fixAll.stylelint": true // Stylelint
+          },
+          // formatter
+          "editor.defaultFormatter": "esbenp.prettier-vscode", // デフォルトフォーマッターをPrettier
+          "editor.formatOnSave": true,
+          "editor.formatOnPaste": true,
+          "editor.formatOnType": true,
+          "[markdown]": {
+            "editor.formatOnSave": false
+          }
+        },
+        "extensions": [
+          "Vue.volar",
+          "Vue.vscode-typescript-vue-plugin",
+          "esbenp.prettier-vscode",
+          "EditorConfig.EditorConfig",
+          "dbaeumer.vscode-eslint",
+          "VisualStudioExptTeam.vscodeintellicode",
+          "MS-CEINTL.vscode-language-pack-ja",
+          "oderwat.indent-rainbow",
+          "PKief.material-icon-theme",
+          "ZixuanChen.vitest-explorer",
+          "GitHub.copilot"
+        ]
+      }
+    },
+    "features": {
+      "docker-in-docker": "latest",
+      "aws-cli": "latest"
+    },
+    "postStartCommand": "yarn install && yarn dev"
+  }
