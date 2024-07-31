@@ -9,7 +9,7 @@ export default defineNuxtConfig({
         { charset: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
       ],
-      link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }],
+      link: [{ rel: "icon", type: "image/png", href: "/favicon.ico" }],
     },
   },
   css: ["vuetify/lib/styles/main.sass", "mdi/css/materialdesignicons.min.css"],
@@ -17,4 +17,12 @@ export default defineNuxtConfig({
     transpile: ["vuetify"],
   },
   srcDir: "chico",
+  vite: {
+    server: {
+      watch: {
+        usePolling: true, // ポーリングを使用してファイルの変更を監視
+        interval: 500, // ポーリングの間隔（ミリ秒）
+      },
+    },
+  },
 });
